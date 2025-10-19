@@ -9,7 +9,6 @@ Indikator cTrader yang menampilkan kemiringan Moving Average sebagai histogram b
 - Multiple data sources (Close, Open, High, Low, Median, Typical, Weighted)
 - Smoothing untuk mengurangi noise
 - Moving Average line untuk konfirmasi trend
-- Dynamic dot size di bawah threshold
 - Zero line reference
 
 ## Parameter
@@ -25,7 +24,6 @@ Indikator cTrader yang menampilkan kemiringan Moving Average sebagai histogram b
 | MA Line Period | 14 | Periode MA line |
 | MA Line Type | Simple | Jenis MA line |
 | Show Zero Line | true | Tampilkan garis zero |
-| Use Dynamic Dot Size | true | Titik dinamis di bawah threshold |
 
 ## Instalasi
 

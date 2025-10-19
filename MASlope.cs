@@ -34,9 +34,6 @@ namespace cAlgo
         
         [Parameter("Show Zero Line", DefaultValue = true)]
         public bool ShowZeroLine { get; set; }
-        
-        [Parameter("Use Dynamic Dot Size", DefaultValue = true)]
-        public bool UseDynamicDotSize { get; set; }
         #endregion
         
         #region Outputs
@@ -59,7 +56,7 @@ namespace cAlgo
         private MovingAverage _smoothMA;
         private IndicatorDataSeries _slopeSeries;
         private IndicatorDataSeries _rawSlopeSeries;
-        private const double BASE_DOT_SIZE = 0.5;
+        private const double DOT_SIZE = 0.2;
         #endregion
         
         public enum DataSourceType
@@ -212,19 +209,15 @@ namespace cAlgo
             else
             {
                 // Titik kecil untuk nilai di bawah threshold
-                double dotSize = UseDynamicDotSize 
-                    ? BASE_DOT_SIZE * (absSlope / Threshold) 
-                    : BASE_DOT_SIZE;
-                
                 if (slopePercent > 0)
                 {
-                    PositiveSlope[index] = dotSize;
+                    PositiveSlope[index] = DOT_SIZE;
                     NegativeSlope[index] = 0;
                 }
                 else
                 {
                     PositiveSlope[index] = 0;
-                    NegativeSlope[index] = -dotSize;
+                    NegativeSlope[index] = -DOT_SIZE;
                 }
             }
         }
